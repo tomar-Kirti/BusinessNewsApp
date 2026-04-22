@@ -28,6 +28,7 @@ public class HomeController : Controller
 
         // Create HTTP client instance using factory
         var client = _httpClientFactory.CreateClient();
+        client.DefaultRequestHeaders.UserAgent.ParseAdd("BusinessNewsApp/1.0");
 
         // Build API URL with query parameters (US business headlines)
         var url = $"https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={apiKey}";

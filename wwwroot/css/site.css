@@ -1,32 +1,253 @@
+:root {
+    /* Editorial accent */
+    --accent: #b91c1c;
+    --accent-hover: #7f1d1d;
+    --accent-soft: #fef2f2;
+    /* Focus */
+    --focus-ring-inner: #ffffff;
+    --focus-ring-outer: #b91c1c;
+    --focus-ring-inner-size: 0.1rem;
+    --focus-ring-outer-size: 0.2rem;
+    /* Surfaces */
+    --page-bg: #fafaf7;
+    --card-bg: #ffffff;
+    --rule: #1a1a1a;
+    --rule-soft: #d4d4d0;
+    --text-main: #111111;
+    --text-muted: #555555;
+    /* Typography */
+    --serif: "Georgia", "Times New Roman", "Source Serif Pro", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Layout */
+    --body-footer-space: 60px;
+}
+
+/* Responsive base font size */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-/* Override Bootstrap's default focus styles to use a custom box-shadow */
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    html {
+        font-size: 17px;
+    }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Page base */
 body {
-  margin-bottom: 60px;
+    margin-bottom: var(--body-footer-space);
+    background-color: var(--page-bg);
+    color: var(--text-main);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Editorial headlines — big serif, tight tracking */
+h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-weight: 700;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 4px double var(--rule);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-top: 1.75rem;
+}
+
+/* Subheads / lead paragraphs */
+.lead, h1 + p, h1 + .text-muted {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Navbar — masthead style */
+.navbar {
+    background-color: var(--card-bg) !important;
+    border-bottom: 2px solid var(--rule);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.navbar-brand {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    color: var(--text-main) !important;
+    text-transform: none;
+}
+
+.nav-link {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-main) !important;
+    transition: color 0.15s ease;
+}
+
+    .nav-link:hover {
+        color: var(--accent) !important;
+    }
+
+/* Links — editorial red with underline on hover */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+    a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+    }
+
+/* Article headlines (links in the news list) */
+.container a[href^="http"] {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.25;
+    display: inline-block;
+    padding: 0.25rem 0;
+    transition: color 0.15s ease;
+}
+
+    .container a[href^="http"]:hover {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+/* Source names (the bold labels above each headline) */
+.container strong,
+.container b,
+.container h3,
+.container h4 {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+/* Horizontal rules between stories */
+hr {
+    border: 0;
+    border-top: 1px solid var(--rule-soft);
+    margin: 1.5rem 0;
+}
+
+/* Cards, if used */
+.card {
+    background-color: var(--card-bg);
+    border: 0;
+    border-top: 3px solid var(--rule);
+    border-radius: 0;
+    padding: 1rem 0;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 0;
+    border: 0;
+    border-left: 4px solid var(--accent);
+    background-color: var(--accent-soft);
+    font-family: var(--sans);
+}
+
+    .alert strong {
+        font-family: var(--sans);
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: inherit;
+        color: var(--text-main);
+        display: inline;
+    }
+
+/* Buttons */
+.btn {
+    border-radius: 2px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.6rem 1.25rem;
+    transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+    .btn:active {
+        transform: translateY(1px);
+    }
+
+.btn-primary {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+    .btn-primary:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
+    }
+
+/* Form controls */
+.form-control {
+    border-radius: 2px;
+    border: 1px solid var(--rule-soft);
+    font-family: var(--sans);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+    /* Custom focus ring */
+    .btn:focus,
+    .btn:active:focus,
+    .btn-link.nav-link:focus,
+    .form-control:focus,
+    .form-check-input:focus {
+        box-shadow: 0 0 0 var(--focus-ring-inner-size) var(--focus-ring-inner), 0 0 0 var(--focus-ring-outer-size) var(--focus-ring-outer);
+        border-color: var(--accent);
+    }
+
+/* Floating label placeholders */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: var(--text-muted);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--card-bg);
+    border-top: 2px solid var(--rule);
+    color: var(--text-muted);
+    font-family: var(--sans);
+    font-size: 0.85rem;
 }
