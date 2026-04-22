@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS_source\\BusinessNewsApp\\BusinessNewsApp.csproj": {}
+    "C:\\Users\\aya.bark\\source\\repos\\BusinessNewsApp\\BusinessNewsApp.csproj": {}
   },
   "projects": {
-    "D:\\VS_source\\BusinessNewsApp\\BusinessNewsApp.csproj": {
+    "C:\\Users\\aya.bark\\source\\repos\\BusinessNewsApp\\BusinessNewsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS_source\\BusinessNewsApp\\BusinessNewsApp.csproj",
+        "projectUniqueName": "C:\\Users\\aya.bark\\source\\repos\\BusinessNewsApp\\BusinessNewsApp.csproj",
         "projectName": "BusinessNewsApp",
-        "projectPath": "D:\\VS_source\\BusinessNewsApp\\BusinessNewsApp.csproj",
-        "packagesPath": "C:\\Users\\kirti\\.nuget\\packages\\",
-        "outputPath": "D:\\VS_source\\BusinessNewsApp\\obj\\",
+        "projectPath": "C:\\Users\\aya.bark\\source\\repos\\BusinessNewsApp\\BusinessNewsApp.csproj",
+        "packagesPath": "C:\\Users\\aya.bark\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aya.bark\\source\\repos\\BusinessNewsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kirti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aya.bark\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
