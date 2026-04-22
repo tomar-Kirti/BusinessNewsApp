@@ -95,3 +95,4 @@ D:\VS_source\BusinessNewsApp\obj\Debug\net10.0\refint\BusinessNewsApp.dll
 D:\VS_source\BusinessNewsApp\obj\Debug\net10.0\BusinessNewsApp.pdb
 D:\VS_source\BusinessNewsApp\obj\Debug\net10.0\BusinessNewsApp.genruntimeconfig.cache
 D:\VS_source\BusinessNewsApp\obj\Debug\net10.0\ref\BusinessNewsApp.dll
+D:\VS_source\BusinessNewsApp\obj\Debug\net10.0\BusinessNewsApp.sourcelink.json
