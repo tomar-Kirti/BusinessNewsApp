@@ -18,25 +18,23 @@ public class HomeController : Controller
         _configuration = configuration;
     }
 
-    // Async Index action — fetches business headlines from NewsAPI
     public async Task<IActionResult> Index()
     {
-        // Read the API key from appsettings.json → "NewsApi" → "ApiKey"
         var apiKey = _configuration["NewsApi:ApiKey"];
-
         var client = _httpClientFactory.CreateClient();
-
-        // Build the NewsAPI endpoint URL for top US business headlines
         var url = $"https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey={apiKey}";
 
-        // Send the GET request and read the response body as a string
-        var responseString = await client.GetStringAsync(url);
+        var response = await client.GetAsync(url);
+        var responseString = await response.Content.ReadAsStringAsync();
 
-        // Deserialize JSON into NewsResponse — case-insensitive to match JSON property names
+        if (!response.IsSuccessStatusCode)
+        {
+            ViewBag.ApiError = $"NewsAPI error {(int)response.StatusCode}: {responseString}";
+            return View(new List<Article>());
+        }
+
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
         var newsResponse = JsonSerializer.Deserialize<NewsResponse>(responseString, options);
-
-        // Pass the list of articles to the view (empty list as fallback)
         var articles = newsResponse?.Articles ?? new List<Article>();
         return View(articles);
     }
